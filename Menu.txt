@@ -1,0 +1,17 @@
+---------------------------------------------
+	Menu 
+---------------------------------------------
+Inserisci il numero corrispondente:
+
+1) Lettura albero di decisione da file
+2) Inserimento di un nodo etichettato labelFiglio attaccato a un padre labelPadre
+3) Cancellazione di un nodo dall'albero;
+4) Modifica di un nodo dall'albero;
+5) Visualizzazione dell'albero di decisione;
+6) Stampa variabili dell'albero di decisione
+7) Effettua predizione inserendo i valori uno alla volta
+8) Effettua predizione inserendo tutti i valori all'inizio
+
+0) Uscita
+
+-----
