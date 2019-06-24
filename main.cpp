@@ -74,7 +74,7 @@ while (true)
    cin >> nome_file;    // acquisisco il nome del file
    if (!cin) throw runtime_error("Errore inserimento nome file\n");
 
-   readFromFile(nome_file); // quale redfromfile?
+   t = Dtree::readFromFile(nome_file); // quale redfromfile?
    break;
 
    case '2':  //Inserimento di un nodo etichettato labelFiglio attaccato a un padre labelPadre
@@ -94,15 +94,45 @@ while (true)
    break;
 
    case '4':
-   cin >> l1 >> l2;
-   removeBlanksAndLower(l1);
-   //Tree aux = t;
-  // aux = tree::getNode(l1, aux);
-  // aux->label = l2;
+{  while(true)  {
+   string newType, newArg;
+   cout << "5 - Visualizza; 0 - Esci da modifica;" << endl;
+   cin >> l1;
+
+   if( l1 == "5") Dtree::printTree(t , 0);
+
+   else if ( l1 == "0") break;
+
+   else {
+    cout << "Inserisci il nome completo (tipo:::argomento) da modificare";
+    cin >> l1;
+    cout << "Inserisci il nuovo tipo: ";
+    cin >> newType;
+    cout << "Inserisci il nuovo argomento: ";
+    cin >> newArg;
+    Dtree::modify( l1, newType, newArg, t);
+  }
+
+ }
+ }
    break;
 
    case '5':
-   Dtree::printTree(t);
+   Dtree::printTree(t , 2);
+   break;
+
+   case '6':
+   Dtree::printTree(t , 1);
+   break;
+
+   case '7':
+   {
+   string valS;
+   Dtree::prediction (valS,t);
+   cout << "Il valore previsto: " << valS << endl << endl;
+   break;
+    }
+   case '8':
    break;
 
    case 'p':

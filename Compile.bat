@@ -1,3 +1,3 @@
-g++ -Wall -std=c++11 *.cpp -o tree
+g++ -std=c++11 *.cpp -o tree
 
 PAUSE
