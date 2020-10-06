@@ -1,30 +1,34 @@
 
-enum TypeofCell {age, category, risc, end };
+/*
+#include <cstddef>
+#include <iostream>
+#include <sstream>
+#include <stdexcept>
+#include <vector>
+#include <fstream>
+#include <string>
+#include <chrono>
+*/
+#include "tree-chsib.h"
+
+using namespace std;
+
+namespace Dtree{
 
 typedef string Label;
 
-namespace Tree {
-struct treeNode {
-  nodeArch * rightChild;  //puntatore al figlio di sinistra
-  nodeArch * leftChild;
-  TypeofCell type; // si potrebbe fare un puntatore ad un array con i valori ma non credo sia così utile
-};
-
-struct nodeArch {
-  Label label;  //valore immagazinato
-  treeNode * ptrCell; //puntatore al figlio
-};
-
-typedef Cell* Tree; // la radice
-
-CreateEmpty(Tree&);
-isEmpty(const &Tree);
-insert(); // ancora da definire questa
+const string wall = ":::";
 
 
-
-
-
+/* Funzioni che non caratterizzano il TDD Tree, ma che servono per input/output */
+tree::Tree readFromFile(string);
+tree::Tree readFromStream(istream&);
+void printTree(const tree::Tree&, const unsigned int);
+void modify(string, string, string, tree::Tree&);
+tree::Tree getNode(const Label, const tree::Tree&);
+void prediction ( string&, const tree::Tree&);
+void findWall(const string, string&, string&); //ritorna il valore dell'espressione utile per le operazioni, il tipo di valore verrà inserito nella variabile&
+//funzioni inserite nel DecisionTree perchè utili solo con esso
 
 
 }
